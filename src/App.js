@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { Router, Route } from 'react-router'
 import logo from './logo.svg';
 import './App.css';
 import UseState from './main/hookComponent';
 import UseEffect from './main/useEffect';
 import Muso from './main/usestate';
+import Sider from './main/sider';
 let visible = true;
 
 class App extends Component {
@@ -14,8 +16,16 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <div className='content'>
-          {visible && <UseState visible={visible}/>}
-          <UseEffect />
+          {/* <Sider /> */}
+          <Router>
+            <Route path="/" exact component={UseState}>
+              <Route path="/useState" component={UseState} />
+              <Route path="/useEffect" component={UseEffect} />
+              <Route path="/customizeHooks" component={UseEffect} />
+            </Route>
+          </Router>
+          {/* {visible && <UseState visible={visible}/>}
+          <UseEffect /> */}
         </div>
       </div>
     );
