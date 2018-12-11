@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import UseState from './main/hookComponent';
-import UseEffect from './main/useEffect';
-import Muso from './main/usestate';
-let visible = true;
+import React, { Component } from "react";
+import { Route, Switch, Link } from "react-router-dom";
+import logo from "./logo.svg";
+import "./App.css";
+import UseState from "./useState";
+import UseEffect from "./useEffect";
+import CustomizeHook from "./customizeHooks";
 
 class App extends Component {
   render() {
@@ -13,9 +13,24 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <div className='content'>
-          {visible && <UseState visible={visible}/>}
-          <UseEffect />
+        <div className="content">
+          <ul>
+            <li>
+              <Link to="/useState">useState</Link>
+            </li>
+            <li>
+              <Link to="/useEffect">useEffect</Link>
+            </li>
+            <li>
+              <Link to="/customizeHook">customizeHook</Link>
+            </li>
+          </ul>
+          <Switch>
+            <Route exact path="/" component={UseState} />
+            <Route path="/useState" component={UseState} />
+            <Route path="/useEffect" component={UseEffect} />
+            <Route path="/customizeHook" component={CustomizeHook} />
+          </Switch>
         </div>
       </div>
     );

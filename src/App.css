@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-color: #282c34;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   min-height: 100vh;
 }
 
@@ -22,13 +22,38 @@
 
 .content {
   color: #fff;
+  display: flex;
+  width: 800px;
+  margin: 50px auto;
+}
+
+.content > ul {
+  width: 200px;
+  list-style: none;
+  color: #fff;
+}
+
+.content > ul > li {
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+.content > ul a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .content > div {
   margin: 20px 0;
+  text-align: center;
+  flex: 1;
 }
 
-.content .useState button{
+.content .useState button {
+  margin-right: 10px;
+}
+
+.mutilpleBtns button {
   margin-right: 10px;
 }
 
