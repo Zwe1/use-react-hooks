@@ -57,6 +57,10 @@
   margin-right: 10px;
 }
 
+.content .span-list span {
+  display: block;
+}
+
 .App-link {
   color: #61dafb;
 }

@@ -22,17 +22,16 @@ const HookCom = () => {
           setAge
         </button>
       </div>
-      <div>
+      <div className="span-list">
         <p>
-          {todos.map(todo => (
-            <div>{`I'm ${todo.text}`}</div>
+          {todos.map((todo, i) => (
+            <span key={`${todo.text}_${i}`}>{`I'm ${todo.text}`}</span>
           ))}
         </p>
         <button onClick={() => setTodos(todos.concat([{ text: "add text" }]))}>
           add todos
         </button>
       </div>
-      {/* <div>{`${fruit} taste good`}</div> */}
     </div>
   );
 };
