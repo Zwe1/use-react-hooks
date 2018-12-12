@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 let visible = true;
 
+// 使用hooks的两点原则：
+// 1. 必须在函数总结中使用
+// 2. 必须在最外层使用，不能放在if else 语句中
 const HookCom = () => {
   const [age, setAge] = useState(42);
   // if (visible) {

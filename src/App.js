@@ -5,6 +5,7 @@ import "./App.css";
 import UseState from "./useState";
 import UseEffect from "./useEffect";
 import CustomizeHook from "./customizeHooks";
+import UseReducer from "./useReducer";
 
 class App extends Component {
   render() {
@@ -22,6 +23,9 @@ class App extends Component {
               <Link to="/useEffect">useEffect</Link>
             </li>
             <li>
+              <Link to="/useReducer">useReducer</Link>
+            </li>
+            <li>
               <Link to="/customizeHook">customizeHook</Link>
             </li>
           </ul>
@@ -29,6 +33,7 @@ class App extends Component {
             <Route exact path="/" component={UseState} />
             <Route path="/useState" component={UseState} />
             <Route path="/useEffect" component={UseEffect} />
+            <Route path="/useReducer" component={UseReducer} />
             <Route path="/customizeHook" component={CustomizeHook} />
           </Switch>
         </div>

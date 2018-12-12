@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useReducer, useRef } from "react";
-import { todosReducer } from "./usereducer";
+import React, { useState, useEffect, useRef } from "react";
+import useReducer, { todosReducer } from "./usereducer";
 
 function useCount(initValue = 0) {
   const [count, setCount] = useState(initValue);
@@ -11,13 +11,14 @@ function useCount(initValue = 0) {
 
 function usePrevious(value) {
   const ref = useRef();
+  console.log("ref", ref);
   useEffect(() => {
     ref.current = value;
   });
   return ref.current;
 }
 
-function Muso(props) {
+function CustomizeHook(props) {
   const { initValue = 1 } = props;
   const [todos, dispatch] = useReducer(todosReducer, []);
   const [count, setCount] = useCount(initValue);
@@ -41,4 +42,4 @@ function Muso(props) {
     </div>
   );
 }
-export default Muso;
+export default CustomizeHook;

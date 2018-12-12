@@ -1,10 +1,11 @@
-let state = undefined;
+import { useRef } from "react";
+
 export default function useState(initalState) {
-  state = initalState;
+  const persistState = useRef(initalState);
   const setState = nextState => {
-    console.log("nextState", nextState);
-    state = nextState;
+    console.log("current", persistState.current, "nextState", nextState);
+    persistState.current = nextState;
   };
 
-  return [state, setState];
+  return [persistState.current, setState];
 }
