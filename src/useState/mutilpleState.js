@@ -12,6 +12,7 @@ const HookCom = () => {
   //   visible = false;
   // }
   const [todos, setTodos] = useState([{ text: "learning Hooks" }]);
+  console.log("age", age, todos);
 
   return (
     <div className="useState">
@@ -19,7 +20,9 @@ const HookCom = () => {
         <p>Age: {age}</p>
         <button
           onClick={() => {
-            setAge(age * 2);
+            setAge(age + 1);
+            setAge(age + 2);
+            setTodos(todos.concat([{ text: "add te----xt" }]));
           }}
         >
           setAge

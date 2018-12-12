@@ -36,6 +36,7 @@ class App extends Component {
             <Route path="/useReducer" component={UseReducer} />
             <Route path="/customizeHook" component={CustomizeHook} />
           </Switch>
+          <UseReducer />
         </div>
       </div>
     );

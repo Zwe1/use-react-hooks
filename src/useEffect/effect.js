@@ -8,6 +8,7 @@ const Effect = () => {
     );
     // 更新文档的标题
     document.title = count;
+    fetchData = () => {};
   });
 
   return (
@@ -31,6 +32,10 @@ export class Example extends React.Component {
   }
 
   componentDidUpdate() {
+    document.title = `You clicked ${this.state.count} times`;
+  }
+
+  componentWillUnmount() {
     document.title = `You clicked ${this.state.count} times`;
   }
 
